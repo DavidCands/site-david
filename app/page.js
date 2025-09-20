@@ -22,10 +22,13 @@ export default function Home() {
             transformar ideias em projetos práticos e explorar diferentes áreas da computação.
           </p>
           <div className="skills">
-            <span>JavaScript</span>
-            <span>React</span>
-            <span>Next.js</span>
-            <span>CSS</span>
+            <span>Linguagens: </span>
+            <span>JavaScript, </span>
+            <span>React, </span>
+            <span>Next.js, </span>
+            <span>CSS, </span>
+            <span>Java e </span>
+            <span>Python</span>
           </div>
           <a className="cta" href="/hangman">
             Ir para o Jogo da Forca →
