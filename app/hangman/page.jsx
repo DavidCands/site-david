@@ -3,11 +3,26 @@ import "./style.css";
 import React, { useEffect, useState } from "react";
 
 const WORDS = [
-  "REACT","JAVASCRIPT","NEXTJS","PROGRAMA","COMPILADOR","ALGORITMO",
-  "ESTRUTURA","DADOS","FUNCAO","OBJETO","VARIAVEL","COMPONENTE",
-  "DEBUG","VSCODE","GITHUB","DESAFIO","TESTE","FRAMEWORK","NPM","NODE",
-  "SERVIDOR","CLIENTE","RESPONSIVO","ASSINCRONO","HOOKS","ESTILO","CSS",
-  "HTML","PORTFOLIO","CURRICULO"
+  "Bulbasaur","Ivysaur","Venusaur","Charmander","Charmeleon","Charizard",
+  "Squirtle","Wartortle","Blastoise","Caterpie","Metapod","Butterfree",
+  "Weedle","Kakuna","Beedrill","Pidgey","Pidgeotto","Pidgeot","Rattata","Raticate",
+  "Spearow","Fearow","Ekans","Arbok","Pikachu","Raichu","Sandshrew","Sandslash",
+  "Nidoran","Nidorina","Nidoqueen","Nidoran","Nidorino","Nidoking","Clefairy",
+  "Clefable","Vulpix","Ninetales","Jigglypuff","Wigglytuff","Zubat","Golbat",
+  "Oddish","Gloom","Vileplume","Paras","Parasect","Venonat","Venomoth",
+  "Diglett","Dugtrio","Meowth","Persian","Psyduck","Golduck","Mankey","Primeape",
+  "Growlithe","Arcanine","Poliwag","Poliwhirl","Poliwrath","Abra","Kadabra", "Alakazam",
+  "Machop","Machoke","Machamp","Bellsprout","Weepinbell","Victreebel","Tentacool",
+  "Tentacruel","Geodude","Graveler","Golem","Ponyta","Rapidash","Slowpoke", "Slowbro",
+  "Magnemite","Magneton","Farfetchd","Doduo","Dodrio","Seel","Dewgong","Grimer",
+  "Muk","Shellder","Cloyster","Gastly","Haunter","Gengar","Onix","Drowzee", "Hypno",
+  "Krabby","Kingler","Voltorb","Electrode","Exeggcute","Exeggutor","Cubone",
+  "Marowak","Hitmonlee","Hitmonchan","Lickitung","Koffing","Weezing","Rhyhorn", "Rhydon",
+  "Chansey","Tangela","Kangaskhan","Horsea","Seadra","Goldeen","Seaking","Staryu",
+  "Starmie","MrMime","Scyther","Jynx","Electabuzz","Magmar","Pinsir","Tauros", "Magikarp",
+  "Gyarados","Lapras","Ditto","Eevee","Vaporeon","Jolteon","Flareon","Porygon",
+  "Omanyte","Omastar","Kabuto","Kabutops","Aerodactyl","Snorlax","Articuno",
+  "Zapdos","Moltres","Dratini","Dragonair","Dragonite","Mewtwo","Mew"
 ];
 
 function pickWord() {
@@ -88,7 +103,7 @@ export default function HangmanPage() {
           <div className="titulo">
             <h2>JOGO DA FORCA</h2>
           </div>
-          <p className="hint">Dica: Palavras relacionadas à programação</p>
+          <p className="hint">Dica: Pokemons da Primeira Geração.</p>
 
           <div className="gallows">
             <svg viewBox="0 0 120 140" className="gallow-svg" role="img" aria-label="Forca">
@@ -128,12 +143,12 @@ export default function HangmanPage() {
             )}
             {status === "won" && (
               <p className="win">
-                Parabéns — você acertou! A palavra era <strong>{word}</strong>
+                Parabéns, você acertou! O Pokémon era <strong>{word}</strong>
               </p>
             )}
             {status === "lost" && (
               <p className="lose">
-                Fim de jogo — a palavra era <strong>{word}</strong>
+                Fim de jogo! O Pokémon era <strong>{word}</strong>
               </p>
             )}
           </div>
@@ -170,25 +185,29 @@ export default function HangmanPage() {
 
         <aside className="right">
           <div className="panel">
-            <h3>Tentativas Anteriores</h3>
+            <div className="tentativa_Anterior">
+              <h3>Tentativas Anteriores</h3>
+            </div>
             <div className="list">
-              <div>
+              <div className="corretas">
                 <strong>Corretas:</strong> {correctLetters.join(", ") || "—"}
               </div>
-              <div>
+              <div className="erradas">
                 <strong>Erradas:</strong> {wrongLetters.join(", ") || "—"}
               </div>
             </div>
           </div>
 
           <div className="panel">
-            <h3>Regras</h3>
+            <div className="regras">
+              <h3>Regras!</h3>
+            </div>
             <ol>
               <li>
-                Você tem até <strong>{maxWrong}</strong> erros.
+                Você perde se errar <strong>{maxWrong}</strong> vezes.
               </li>
-              <li>Digite uma letra por vez ou use o teclado abaixo.</li>
-              <li>Reinicie para começar com palavra aleatória.</li>
+              <li>Digite uma letra por vez ou use o teclado acima.</li>
+              <li>Reinicie para começar com uma palavra aleatória.</li>
             </ol>
           </div>
         </aside>

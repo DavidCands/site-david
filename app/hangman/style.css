@@ -108,34 +108,34 @@ body {
 .keyboard {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(40px, 1fr));
-  gap: 0.4rem;
-  margin-top: 1.5rem;
+  gap: 0.5rem;
+  margin-top: 0.5rem;
   width: 100%;
-  max-width: 500px;
+  max-width: 620px;
 }
 
 .keyboard button {
   padding: 0.6rem;
-  font-size: 1rem;
-  border: 1px solid #ddd;
-  background: #fff;
+  font-size: 1.1rem;
+  border: 2px solid #000000;
+  background: #ffffff;
   cursor: pointer;
   border-radius: 6px;
-  transition: all 0.2s ease;
+  transition: all 0.5s ease;
 }
 
 .keyboard button.correct {
-  background-color: #c8e6c9;
+  background-color: #9ee0a0;
   color: #2e7d32;
 }
 
 .keyboard button.wrong {
-  background-color: #ffcdd2;
+  background-color: #ff8282;
   color: #c62828;
 }
 
 .keyboard button:disabled {
-  opacity: 0.6;
+  opacity: 0.7;
   cursor: not-allowed;
 }
 
@@ -147,13 +147,30 @@ body {
   gap: 1rem;
 }
 
+.tentativa_Anterior {
+  color: #4f46e5
+}
+
+.corretas {
+  color: #51be5a
+}
+
+.erradas {
+  color: #c93d3d;
+}
+
+.regras {
+  margin-bottom: 0.2rem;
+  color: #4f46e5;
+}
+
 .panel {
   background: #fff;
   border-radius: 8px;
   padding: 1rem;
-  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 5px 6px rgba(0, 0, 0, 0.1);
 }
 
 .panel h3 {
-  margin-bottom: 0.5rem;
+  margin-bottom: 0.3rem;
 }
