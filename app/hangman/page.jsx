@@ -18,8 +18,8 @@ export default function HangmanPage() {
   const maxWrong = 6;
   const [word, setWord] = useState(() => pickWord());
   const [guessed, setGuessed] = useState([]); // letras chutadas
-  const [wrong, setWrong] = useState(0); // número de erros
-  const [status, setStatus] = useState("playing"); // playing | won | lost
+  const [wrong, setWrong] = useState(0); // Número de erros
+  const [status, setStatus] = useState("playing"); // Playing | won | lost
   const [input, setInput] = useState("");
 
   const letters = word.split("");
@@ -31,7 +31,8 @@ export default function HangmanPage() {
     // verifica vitória ou derrota sempre que guessed/wrong mudam
     if (letters.length && letters.every((l) => guessed.includes(l))) {
       setStatus("won");
-    } else if (wrong >= maxWrong) {
+    } 
+    else if (wrong >= maxWrong) {
       setStatus("lost");
     }
   }, [guessed, wrong, letters]);
@@ -45,10 +46,18 @@ export default function HangmanPage() {
   }
 
   function handleGuess(letter) {
-    if (status !== "playing") return;
+    if (status !== "playing"){
+      return;
+    }
     letter = String(letter).toUpperCase();
-    if (!/^[A-Z]$/.test(letter)) return; // só letras A-Z
-    if (guessed.includes(letter)) return; // já chutou
+
+    if (!/^[A-Z]$/.test(letter)) {
+      return; // só letras A-Z
+    }
+
+    if (guessed.includes(letter)) {
+      return; // já chutou
+    }
 
     const newGuessed = [...guessed, letter];
     setGuessed(newGuessed);
@@ -57,8 +66,12 @@ export default function HangmanPage() {
     setWrong(newWrong);
 
     // checagem imediata (useEffect também cobre)
-    if (letters.every((l) => newGuessed.includes(l))) setStatus("won");
-    else if (newWrong >= maxWrong) setStatus("lost");
+    if (letters.every((l) => newGuessed.includes(l))) {
+      setStatus("won");
+    }
+    else if (newWrong >= maxWrong) {
+      setStatus("lost");
+    }
   }
 
   function handleSubmit(e) {
@@ -72,8 +85,10 @@ export default function HangmanPage() {
     <section className="hangman-wrap">
       <div className="game">
         <div className="left">
-          <h2>Jogo da Forca</h2>
-          <p className="hint">Dica: palavras relacionadas à programação</p>
+          <div className="titulo">
+            <h2>JOGO DA FORCA</h2>
+          </div>
+          <p className="hint">Dica: Palavras relacionadas à programação</p>
 
           <div className="gallows">
             <svg viewBox="0 0 120 140" className="gallow-svg" role="img" aria-label="Forca">

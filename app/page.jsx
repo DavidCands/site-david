@@ -20,18 +20,19 @@ export default function Home() {
             Sou um estudante do curso de Ciência da Computação da Universidade Católica,
             gosto de programar e estou sempre em busca de aprender algo novo. Gosto de
             transformar ideias em projetos práticos e explorar diferentes áreas da computação.
+            Segue abaixo algumas das linguagens e tecnologias que já utilizei:
           </p>
           <div className="skills">
-            <span>Linguagens: </span>
-            <span>JavaScript, </span>
-            <span>React, </span>
-            <span>Next.js, </span>
-            <span>CSS, </span>
-            <span>Java e </span>
+            <span>C</span>
+            <span>JavaScript</span>
+            <span>React</span>
+            <span>Next.js</span>
+            <span>CSS</span>
+            <span>Java</span>
             <span>Python</span>
           </div>
           <a className="cta" href="/hangman">
-            Ir para o Jogo da Forca →
+            Ir para o Jogo da Forca
           </a>
         </div>
       </div>
@@ -40,17 +41,17 @@ export default function Home() {
         <h2>Projetos</h2>
         <div className="project-grid">
           <article className="project">
-            <h3>Projeto: Sistema de Clínica (Java)</h3>
+            <h3>Sistema de Clínica (Java)</h3>
             <p>
-              Gerenciamento de consultas e usuários, com lógica para descontos e
-              agendamentos.
+              Gerenciamento de consultas e usuários, com lógica para agendamentos e
+              descontos no Projeto do Restaurante.
             </p>
           </article>
           <article className="project">
-            <h3>Projeto: Pedidos para Restaurante (JS)</h3>
+            <h3>Pedidos para Restaurante (Java)</h3>
             <p>
-              Aplicação frontend para controle de pedidos com remoção de quantidades
-              e descontos.
+              Aplicação de gerenciamento para controle de pedidos, escolha da mesa, remoção de quantidades de itens
+              e cálculo automático de valor total e descontos com base se o cliente é cadastrado como um Médico da Clínica.
             </p>
           </article>
         </div>
